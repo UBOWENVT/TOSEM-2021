@@ -200,12 +200,13 @@ def report_data():
 
 
 # report_data()
+# Change to project you interested
 result1 = view_data('/home/ppp/Research_Projects/Merge_Conflicts/Script/github_star_projects/Experiment/Top100/server/spring-boot')
 result2 = view_data('/home/ppp/Research_Projects/Merge_Conflicts/Script/github_star_projects/Experiment/Top100/projects_record/spring-boot')
 
-# commit = {k:v for k,v in result['Resolved_Commits'].items() if v['Semantic_conflict_status'] ==ValueEnum.true}
-syn_commit = {k: v for k, v in result['Resolved_Commits'].items() if v['Syntactic_conflict_status'] == ValueEnum.true}
-sem_commit = {k: v for k, v in result['Resolved_Commits'].items() if v['Semantic_conflict_status'] == ValueEnum.true}
+# Change to type of conflicts you interested
+syn_commit = {k: v for k, v in result1['Resolved_Commits'].items() if v['Syntactic_conflict_status'] == ValueEnum.true}
+sem_commit = {k: v for k, v in result1['Resolved_Commits'].items() if v['Semantic_conflict_status'] == ValueEnum.true}
 
 # Add diff file to the corresponding folders
 folder_path = '/home/ppp/Research_Projects/Merge_Conflicts/Script/github_star_projects/server/MergeMiner_output/spring-framework/'
